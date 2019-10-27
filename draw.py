@@ -206,11 +206,11 @@ def draw_shapes(st,n , N = 720,color=None,shape=None,randomS=False):
         #
         
         #将判断矩阵进行旋转的代码
-        overloping_judge_matrix = np.array([[i,j] for i in range(-r1,r1+1) for j in range(-r2,r2+1)]).T #每个点的相对坐标
-        overloping_judge_matrix = np.dot(overloping_judge_matrix.T,rotation_matrix(angle))#乘以旋转矩阵
-        overloping_judge_matrix = overloping_judge_matrix.astype(int)#转化为
-        overloping_judge_matrix = [[x,y] for ii in range(-r1,r1+1) for jj in range(-r2,r2+1)]+overloping_judge_matrix
-        ojm = overloping_judge_matrix
+        overlaping_judge_matrix = np.array([[i,j] for i in range(-r1,r1+1) for j in range(-r2,r2+1)]).T #每个点的相对坐标
+        overlaping_judge_matrix = np.dot(overlaping_judge_matrix.T,rotation_matrix(angle))#乘以旋转矩阵
+        overlaping_judge_matrix = overlaping_judge_matrix.astype(int)#转化为
+        overlaping_judge_matrix = [[x,y] for ii in range(-r1,r1+1) for jj in range(-r2,r2+1)]+overlaping_judge_matrix
+        ojm = overlaping_judge_matrix
         ojm = np.unique(ojm,axis=0)
         #判断是否重叠，并把不重叠的绘制出来
         for zz in range(len(ojm)):
